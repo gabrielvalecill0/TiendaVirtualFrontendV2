@@ -1,0 +1,25 @@
+<div class="container">
+    <div *ngIf="!isEmpty" class="orden-content">
+        <div class="center">
+            <h1 class="titulo">O R D E N</h1>
+            <img [src]="getImgSrc()" class="producto-imagen" alt="{{ orden.nombreDelProducto }}">
+            <h2 class="nombre-producto">{{ orden.nombreDelProducto }}</h2>
+            <p class="precio">Precio: {{ orden.precioDelProducto | currency }}</p>
+            <button mat-raised-button color="primary" (click)="realizarOrden()" class="boton-orden">
+                Realizar Orden
+            </button>
+            <button mat-raised-button color="primary" class="update-button" (click)="borrarOrden()">
+                Borrar Orden
+            </button>
+        </div>
+    </div>
+
+
+<ng-container *ngIf="isEmpty">
+    <div class="empty-cart">
+        <mat-icon class="customIconSize">remove_shopping_cart</mat-icon>
+        <br>
+        <span>No Hay Ninguna Orden Pendiente.</span>
+    </div>
+</ng-container>
+</div>

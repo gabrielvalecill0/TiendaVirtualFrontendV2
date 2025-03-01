@@ -1,0 +1,49 @@
+<div class="container" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <mat-card>
+        <mat-card-title style="text-align: center;">U N E T E N O S</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="formularioDeRegistro" (ngSubmit)="enviarFormulario()" style="display: flex; flex-direction: column; align-items: center;">
+                <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre" placeholder="Nombre" required>
+                    <mat-error *ngIf="formularioDeRegistro.get('nombre')?.invalid && formularioDeRegistro.get('nombre')?.touched">
+                        Por Favor Ingresa Un Nombre Valido
+                    </mat-error>                    
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+                    <mat-label>Correo</mat-label>
+                    <input matInput formControlName="correo" placeholder="Correo" required>
+                    <mat-error *ngIf="formularioDeRegistro.get('correo')?.invalid && formularioDeRegistro.get('correo').touched">
+                        Por Favor Ingresa Un Correo Valido
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="contrasenaVisible ? 'password' : 'text'" formControlName="contrasena" placeholder="Contraseña" required>
+                    <button mat-icon-button matSuffix type="button" (click)="controlDeVisibilidad()">
+                        <mat-icon>{{ contrasenaVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="formularioDeRegistro.get('contrasena')?.invalid && formularioDeRegistro.get('contrasena').touched">
+                        Por Favor Ingresa Una Contraseña Valida
+                    </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+                    <mat-label>Confirma Contraseña</mat-label>
+                    <input matInput [type]="contrasenaVisible ? 'password' : 'text'" formControlName="confirmarContrasena" placeholder="Confirma Contraseña" required>
+                    <button mat-icon-button matSuffix type="button" (click)="controlDeVisibilidad()">
+                        <mat-icon>{{ contrasenaVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="formularioDeRegistro.get('confirmarContrasena')?.invalid && formularioDeRegistro.get('confirmarContrasena').touched">
+                        Por Favor Confirma Tu Contraseña
+                    </mat-error>
+                </mat-form-field>                
+                <br>
+                <button mat-raised-button color="primary" type="submit" [disabled]="formularioDeRegistro.invalid">REGISTRARSE</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+

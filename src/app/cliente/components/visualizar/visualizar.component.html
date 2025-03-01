@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="product-container">
+        <img class="product-image" [src]="'data:image/jpeg;base64,' + product?.byteImg" alt="Imagen del producto"
+            *ngIf="product?.byteImg">
+
+        <div class="product-details">
+            <h2 class="product-name">{{ product?.nombre }}</h2>
+            <p class="product-description">{{ product?.descripcion }}</p>
+
+            <mat-divider></mat-divider>
+            <div class="product-info">
+                <div class="info-row">
+                    <span class="info-label">Precio:</span>
+                    <span class="info-value">$ {{ product?.precio }}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Categoría:</span>
+                    <span class="info-value">{{ product?.nombreDeCategoria }}</span>
+                </div>
+            </div>
+            <button mat-raised-button color="primary" class="update-button" (click)="crearOrden(product.id)">
+                Agregar Al Carrito
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+.center {
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 10px 15px 15px rgba(3, 89, 92, .5);
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Esquinas redondeadas */
+    background-color: white; /* Fondo blanco */
+}
+
+.orden-content {
+    border: 1px solid rgba(3, 89, 92, .5); /* Marco alrededor del contenido */
+    padding: 0; /* Elimina el espacio interno para acercar el contenido al borde */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin: 10px 0; /* Espacio vertical reducido entre el marco y el borde de la pantalla */
+}
+
+.producto-imagen {
+    width: 90%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el siguiente elemento */
+}
+
+.nombre-producto,
+.cantidad,
+.precio {
+    margin-bottom: 10px; /* Espacio entre los elementos de texto */
+}
+
+.container {
+    padding-top:20px;
+    width: 30%; /* Ajusta el ancho al 30% */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+
+.empty-cart {
+    display: flex;                /* Utiliza flexbox */
+    flex-direction: column;      /* Alinea los elementos en columna */
+    justify-content: center;      /* Centra verticalmente */
+    align-items: center;          /* Centra horizontalmente */
+}
+
+.customIconSize {
+    font-size: 200px;            /* Cambia a cualquier tamaño deseado */
+    height: 200px;               /* Ajusta la altura */
+    width: 200px;                /* Ajusta el ancho */
+}

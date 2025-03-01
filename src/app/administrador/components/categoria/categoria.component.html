@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Agregar Categoria</h2>
+    <form [formGroup]="formularioDeCategoria" (ngSubmit)="agregarCategoria()">
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" placeholder="Nombre" formControlName="nombre"/>
+            <mat-error *ngIf="formularioDeCategoria.get('nombre')?.hasError('required')">El Nombre Es Requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Descripcion</mat-label>
+            <input matInput type="text" placeholder="Descripcion" formControlName="descripcion" />
+            <mat-error *ngIf="formularioDeCategoria.get('descripcion')?.hasError('required')">La Descripcion Es Requerida</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Añadir</button>
+
+    </form>
+</div>
