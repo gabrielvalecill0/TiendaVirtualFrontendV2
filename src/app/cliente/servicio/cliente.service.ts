@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsuarioLocalStorageService } from '../../servicios/usuario-local-storage.service';
 
-const URL = "https://tiendavirtual-fu7i.onrender.com/"/*"http://localhost:8080/"*/;
+const URL = /*"https://tiendavirtual-fu7i.onrender.com/"*/"http://localhost:8080/";
 
 @Injectable({
   providedIn: 'root'
